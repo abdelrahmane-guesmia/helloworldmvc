@@ -1,15 +1,17 @@
 package helloworldmvc.main;
 import helloworldmvc.model.*;
+import helloworldmvc.view.*;
+import helloworldmvc.controller.*;
 
 public class Main 
 {
 
 	public static void main(String[] args) 
 	{
-		Model LECTURE = new Model();
-		System.out.println("DEBUT LECTURE");
-		System.out.println(LECTURE.getHelloWorld());
-		System.out.println("FIN LECTURE");
+		Model MODEL = new Model();
+		View VIEW = new View();
+		Controller CONTROLLER = new Controller(VIEW, MODEL);
+		CONTROLLER.run();
 	}
 
 }
